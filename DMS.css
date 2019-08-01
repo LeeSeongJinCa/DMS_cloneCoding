@@ -1,3 +1,10 @@
+::-webkit-scrollbar {
+    width: .8125rem;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    background-color: #10a3a4;
+}
 /*! page-one */
 #page-one {
     background-image: linear-gradient(180deg,#078f91,#19b6b6);
@@ -112,7 +119,6 @@
 }
 #meal-button-wrap {
     display: flex;
-    margin-top: 30px;
 }
 .meal-button {
     width: 9.375rem;
@@ -191,15 +197,44 @@
     padding: 5px 10px;
     border-radius: 20px;
     background-color: #f5f5f5;
-    transition: .5s;
+    transition: .45s;
     color: #000;
 }
 .main-apply:hover {
     box-shadow: 0 5px 5px 0 rgba(0,0,0,.2);
+    color: #fff;
     background-color: #19b6b6;
 }
 .main-apply-img {
-    display: block;
+    position: absolute;
+    transition: .5s;
+}
+#main-apply-img1 {
+    top: -6.7rem;
+    width: 0;
+    opacity: 0;
+}
+#main-apply-img2 {
+    left: -8.8rem;
+    bottom: 0;
+    opacity: 0;
+    width: 0;
+}
+#main-apply-img3 {
+    left: -11.1875rem;
+    bottom: -6.75rem;
+    opacity: 0;
+    width: 0;
+}
+#main-apply-img4 {
+    right: -8.125rem;
+    bottom: 0;
+    opacity: 0;
+    width: 0;
+}
+.main-apply:hover .main-apply-img {
+    width: auto !important;
+    opacity: 1 !important;
 }
 .main-apply-icon {
     display: inline-block;
@@ -276,11 +311,25 @@
     position: relative;
     height: 100%;
     width: 25rem;
+    opacity: .5;
+    transition: .5s ease-in-out;
+}
+.guide-list-wrap:hover {
+    opacity: 1 !important;
+}
+.guide-list-wrap:hover .guide-title {
+    bottom: 2.125rem;
+}
+.guide-list-wrap:hover .guide-subtitle {
+    opacity: 1;
+    display: block;
 }
 .guide-img1 {
+    width: 100%;
     border-radius: 10px 0 0 10px;
 }
 .guide-img2 {
+    width: 100%;
     border-radius: 0 10px 10px 0;
 }
 .guide-title-wrap {
@@ -289,13 +338,22 @@
     left: 50px;
 }
 .guide-title {
+    position: absolute;
+    width: 10rem;
+    bottom: 0rem;
+    left: 0rem;
     color: #fff;
     transition: bottom .5s;
     font-size: 1.5rem;
     margin-bottom: 15px;
+    transition: bottom .5s;
 }
 .guide-subtitle {
+    font-size: .875rem;
     color: #fff;
+    opacity: 0;
+    transition: .5s;
+    display: none;
 }
 /*! page-four */
 #page-four {
@@ -331,12 +389,27 @@
     bottom: 100px;
 }
 .extra {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     flex: 1;
     z-index: 100;
+}
+.extra-cover {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    background-color: #9e9e9e;
+    transition: opacity .5s ease-out;
+    opacity: .7;
+}
+.extra-cover:hover {
+    opacity: 0;
 }
 .extra-img {
     width: 300px;
